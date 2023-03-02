@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="resume-section" id="portfolio-data">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            <span class="text-primary">Data Science</span>
+        </h1>
+        <div class="social-icons flex-md-row ">
+            <div class="row gx-5 mt-5 mx-auto">
+                {% for project in data_analysis %}
+                
+                <h4>{{project.title}}</h4>
+                <div class="col-lg-5 mb-5">
+                    <img class="img-fluid mx-auto mb-1" src='{{project.cover_image.url}}' alt="..."/>
+                </div>
+                <div class="col-lg-5 mb-5">
+                    <p>{{project.description}}</p>
+                    <a href='{{project.link_project}}'><p>Check out the project page!</p></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="resume-section" id="portfolio-softwares">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            <span class="text-primary">Softwares</span>
+        </h1>
+        <div class="social-icons flex-md-row ">
+            <div class="row gx-5 mt-5 mx-auto">
+                {% for project in softwares %}
+                
+                <h4>{{project.title}}</h4>
+                <div class="col-lg-4 mb-5">
+                    <img class="img-fluid mx-auto mb-1" src='{{project.cover_image.url}}' alt="..."/>
+                </div>
+                <div class="col-lg-5 mb-5">
+                    <p>{{project.description}}</p>
+                    <a href='{{project.link_project}}'><p>Check out the GitHub page!</p></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="resume-section" id="portfolio-instruments">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            <span class="text-primary">Hardwares</span>
+        </h1>
+        <div class="social-icons flex-md-row ">
+            <div class="row gx-5 mt-5 mx-auto">
+                {% for project in instruments %}
+                
+                <h4>{{project.title}}</h4>
+                <div class="col-lg-4 mb-5">
+                    <img class="img-fluid mx-auto mb-1" src='{{project.cover_image.url}}' alt="..."/>
+                </div>
+                <div class="col-lg-5 mb-5">
+                    <p>{{project.description}}</p>
+                    <a href='{{project.link_project}}'><p>Check out the GitHub page!</p></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock content %}

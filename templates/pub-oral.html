@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="mt-3 mx-3">
+    <h3> Oral Talks:</h3>
+    {% for oral in orals %}
+    <div class='card border-1 shadow rounded-3 overflow-hidden'>
+        <div class='card-body p-0'>
+            <div class='row gx-0'>
+              <div class='py-lg-4 px-lg-4 col-xl-3'><img class='img-fluid rounded' src='{{oral.cover_image.url}}' alt='Paper cover' /></div>
+                <div class='col-lg-6 col-xl-9 py-lg-1'>
+                    <div class='p-3 p-md-4'>
+                        <div class='h5 fw-bolder'>{{oral.title}}</div>
+                        <p>{{oral.author}}</p>
+                        <div><p>{{oral.description}}</p>
+                        <a href='{{oral.link_url}}'><div class='badge bg-primary bg-gradient rounded-pill mb-2'>Presentation</div></a>
+                        <a href='{{oral.link_abstract}}'><div class='badge bg-primary bg-gradient rounded-pill mb-2'>Abstract</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
